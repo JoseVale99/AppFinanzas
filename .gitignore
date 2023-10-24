@@ -1,0 +1,8 @@
+mysql/
+src/storage/framework/views/*.php
+src/storage/logs/*.log
+src/storage/*
+src/storage/framework/views/*.php
+src/public/imgs/logotecamac.png:Zone.Identifier
+src/public/imgs/logotecamac.pngZone.Identifier
+src/public/imgs/logotecamac.png:Zone.Identifier
