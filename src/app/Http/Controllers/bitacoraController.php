@@ -73,11 +73,17 @@ class bitacoraController extends Controller
 
         }
 
-
         foreach ($bitacora as $s) {
           $name_user = User::find($s->id_user);
-          $s->setAttribute('name_user',$name_user->name);
-        }
+          
+          // Verificar si $name_user es un objeto válido
+          if ($name_user instanceof User) {
+              $s->setAttribute('name_user', $name_user->name);
+          } else {
+              // Manejar el caso en el que $name_user no es un objeto válido, por ejemplo, asignando un valor predeterminado.
+              $s->setAttribute('name_user', 'Usuario Desconocido');
+          }
+      }
       
 
         return view('vendor.adminlte.bitacora.bitacora',['bitacora'=>$bitacora,'user'=>$user]);
